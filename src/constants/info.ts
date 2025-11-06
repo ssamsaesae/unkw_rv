@@ -1,8 +1,25 @@
+import { ReactComponent as ReactIcon } from "../../public/skills/react.svg";
+import { ReactComponent as NextIcon } from "../../public/skills/next.svg";
+import { ReactComponent as NodeIcon } from "../../public/skills/node.svg";
+import { ReactComponent as JavascriptIcon } from "../../public/skills/javascript.svg";
+import { ReactComponent as TypescriptIcon } from "../../public/skills/typescript.svg";
+
 export const snsList: Array<{ label: string; link: string }> = [
   { label: "1", link: "" },
   { label: "2", link: "" },
   { label: "3", link: "" },
 ];
+
+export const skillsList: Array<{ label: string; icon: string }> = [
+  { label: "React", icon: "/skills/react.svg" },
+  { label: "ReactNative", icon: "/skills/react.svg" },
+  { label: "Next.js", icon: "/skills/next.svg" },
+  { label: "Javascript", icon: "/skills/javascript.svg" },
+  { label: "Typescript", icon: "/skills/typescript.svg" },
+  { label: "Node.js", icon: "/skills/node.svg" },
+];
+
+export const strength = ["frontend development", "ui/ux design", "branding"];
 
 export const page = {
   about:

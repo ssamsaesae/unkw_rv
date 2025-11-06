@@ -4,6 +4,7 @@
   "experience": [
     {
       "company": "Greenery",
+      "year": "2022",
       "works": [
         {
           "title": "Frontend Development for LCA System",
@@ -57,6 +58,7 @@
     },
     {
       "company": "H-Energy",
+      "year": "2020 ~ 2022",
       "works": [
         {
           "title": "Rooftop Investment Platform Development",
@@ -89,6 +91,7 @@
     },
     {
       "company": "Geeks Family",
+      "year": "2019 ~ 2020",
       "works": [
         {
           "title": "Partner Site (Admin) UI Development",

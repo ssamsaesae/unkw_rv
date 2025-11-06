@@ -3,7 +3,8 @@
   "description": "대한민국 서울 기반으로 활동하는\nFrontend Developer이자\nUI/UX Designer 입니다.\n창의적인 디자인을 코드로 구현합니다.",
   "experience": [
     {
-      "company": "greenery",
+      "company": "Greenery",
+      "year": "2022",
       "works": [
         {
           "title": "LCA System 프론트엔드 개발",
@@ -56,7 +57,8 @@
       ]
     },
     {
-      "company": "henergy",
+      "company": "H-Energy",
+      "year": "2020 ~ 2022",
       "works": [
         {
           "title": "공유옥상 투자 플랫폼 개발",
@@ -83,6 +85,7 @@
     },
     {
       "company": "Geeks Family",
+      "year": "2019 ~ 2020",
       "works": [
         {
           "title": "파트너스 사이트(어드민) UI 개발",

@@ -1,7 +1,10 @@
 import { createTranslation } from "@/i18n/server";
 import { LocaleTypes } from "@/i18n/settings";
 import type { Metadata, ResolvingMetadata } from "next";
+import Image from "next/image";
 import SocialShare from "@/components/social/SocialShare";
+import { Icon, Button } from "@chakra-ui/react";
+import { strength, skillsList } from "@/constants/info";
 
 type Props = {
   params: { locale: LocaleTypes };
@@ -24,12 +27,14 @@ export default async function Home({
 }: {
   params: { locale: LocaleTypes };
 }) {
+  ("use client");
   const { t } = await createTranslation(locale, "meta");
 
   return (
     <>
       <section className="h-screen w-full bg-primary flex flex-col justify-between">
         <div className=" pt-24 px-6 flex flex-col items-start gap-4">
+          {/* <Button onClick={() => setOpen(!open)}>버튼</Button> */}
           <h1 className="font-clash font-bold text-5xl flex flex-col">
             <span className="text-inherit">{"UNKNOWN"}</span>
             <div className="flex items-end">
@@ -39,6 +44,16 @@ export default async function Home({
           </h1>
           <p className="text-lg">{t("description")}</p>
           <div className="w-24 border-t border-solid border-black mt-8"></div>
+          <article className="pt-8 flex gap-2 flex-wrap">
+            {strength.map((item: string, idx: number) => (
+              <div
+                className="py-2 px-5 inline-flex border border-black rounded-3xl"
+                key={`strength-${idx}`}
+              >
+                {item.toLocaleUpperCase()}
+              </div>
+            ))}
+          </article>
         </div>
         <div className="">
           <div className="border-t border-solid border-black p-6 flex justify-between items-center">
@@ -54,6 +69,21 @@ export default async function Home({
           </h2>
           <div className="w-16 border-t border-solid border-primary"></div>
         </div>
+        <article className="flex">
+          {skillsList.map((sk, idx) => (
+            <div key={`sk-${sk.label}`} className="flex gap-2 items-center">
+              <Image
+                src={sk.icon}
+                width={30}
+                height={30}
+                alt={sk.label}
+              ></Image>
+              <span className="text-white font-bold font-clash">
+                {sk.label}
+              </span>
+            </div>
+          ))}
+        </article>
       </section>
     </>
   );
