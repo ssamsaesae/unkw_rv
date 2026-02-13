@@ -1,0 +1,297 @@
+{
+  "title": "Career",
+  "description": "Frontend Developer with 5+ years of experience, designing and implementing frontend systems across diverse domains including LCA platforms, carbon credit services, Web3, IoT, and STO.",
+  "highlights": [
+    "Complex Domain Logic to UI/UX",
+    "Large-scale Input & Validation",
+    "Visual & Graphic-based UI Dev",
+    "Led API Migration FE",
+    "Carbon Credit Domain Dev",
+    "Component Design & UI/UX",
+    "Web3 Wallet Integration",
+    "FE Infra & DX Improvement"
+  ],
+  "experience": [
+    {
+      "company": "Greenery",
+      "year": "2022 ~ Present",
+      "role": "Frontend Developer",
+      "projects": [
+        {
+          "title": "LCA/LCCI Platform Frontend Development",
+          "skills": "React, Redux, Redux-Toolkit, React-Flow, MUI, Data Grid Pro, TailwindCSS, Storybook, Webpack/Vite",
+          "description": "End-to-end frontend design and implementation for an integrated Life Cycle Assessment (LCA) creation, analysis, and management platform",
+          "categories": [
+            {
+              "name": "Large-scale LCA/LCCI Domain Service Development",
+              "items": [
+                "Built full-process UI and features: LCA creation, process-level data input, Mass Balance, process flow diagrams, LCI DB integration",
+                "Mapped complex LCA domain concepts (allocation logic, Cut-off, LCI DB, process trees, flow diagrams) into practical user flows and UI/UX",
+                "Developed and improved full life cycle interpretation (LCI → LCIA) features",
+                "Implemented LCA detail/summary/report download (PDF/Excel) and result visualization"
+              ]
+            },
+            {
+              "name": "Large-scale Input/Validation UI & Common Components",
+              "items": [
+                "Built high-volume data input screens with Data Grid Pro and standardized grid components",
+                "Developed complex interactive UIs for raw materials, energy/water/utilities, BOM, and Mass Balance",
+                "Implemented Excel upload/download, key-in input, required field validation, null handling, and duplicate checks",
+                "Solved advanced input UX challenges including monthly updates and hierarchical tree structures",
+                "Developed LCI DB search, filtering, and integration screens"
+              ]
+            },
+            {
+              "name": "Process Flow Diagram - Full Feature Development",
+              "items": [
+                "Built canvas-based Flow Editor components",
+                "Implemented graphic editor-level features: node create/delete/select/auto-layout/drag/style customization",
+                "Developed flow diagram save/load and image download functionality",
+                "Integrated configuration panels (utilities/materials/nodes) with Tree View"
+              ]
+            },
+            {
+              "name": "Reference Data & Organization Management UI",
+              "items": [
+                "Developed data management (companies, theoretical BOM) and allocation management (emissions/wastewater/waste/LNG/reference factors) screens",
+                "Built site, company, and process management interfaces",
+                "Implemented full Excel upload/edit/view workflows for reference data",
+                "Developed filtering, tree structure, and year-month selection components"
+              ]
+            },
+            {
+              "name": "FE Infrastructure & Developer Productivity",
+              "items": [
+                "Set up FE project from scratch (Webpack/Vite configuration)",
+                "Configured ESLint/Prettier and resolved existing code errors",
+                "Built Storybook-based design system (Input, Dropdown, Sidebar, and other shared components)",
+                "Evaluated paid/open-source libraries (Charts, Grid, Report, etc.)",
+                "Improved and refactored GNB/LNB/RNB routing architecture"
+              ]
+            },
+            {
+              "name": "ECO View / Reduction Simulation FE Development",
+              "items": [
+                "Developed renewable energy reduction simulation input/result UI",
+                "Built chart components and PDF download features",
+                "Improved LCI DB modal conditional rendering",
+                "Developed full ECO View UI and feature enhancements"
+              ]
+            },
+            {
+              "name": "QA Response & Production Quality Improvement",
+              "items": [
+                "Resolved hundreds of QA/planning QA/design QA bugs (input/save errors, Tree View sync, null handling, routing errors, etc.)",
+                "Fixed critical logic bugs: data save failure step navigation, I/O list omissions, process tree depth errors, Cut-off errors",
+                "Added user safety logic such as navigation-away alerts during LCA creation",
+                "Optimized rendering performance and fixed infinite render loops"
+              ]
+            },
+            {
+              "name": "Large-scale LCA Management Enhancement",
+              "items": [
+                "Enhanced full LCA creation flow (General Info → Process Data → Flow Diagram → Final I/O → Cut-off → Result Summary → Data Validation)",
+                "Developed resume-in-progress, detail view, result summary, and summary download features",
+                "Resolved LCA delete/edit issues, prevented duplicate creation, fixed routing errors"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "POPLE Carbon Credit·Marketplace·Registry Platform",
+          "skills": "React, Next.js, Nest.js, MUI, Chakra UI, Context API, Google Maps, i18next",
+          "description": "End-to-end frontend development and operations for an integrated carbon credit issuance, trading, and registry platform",
+          "categories": [
+            {
+              "name": "Platform Refactoring & FE Architecture",
+              "items": [
+                "Restructured sign-up logic and resolved corporate file upload issues",
+                "Implemented multilingual terms page/API handling",
+                "Resolved phone validation, email verification resend issues",
+                "Refactored business registration/edit/delete and credit issuance/reduction certification flows",
+                "Fixed infinite loops, incorrect API calls, and duplicate request issues",
+                "Led full API migration across Marketplace, Credit, Registry, User, Payment modules",
+                "Rebuilt Admin/Front for API spec changes and data structure updates"
+              ]
+            },
+            {
+              "name": "UI/UX & Common Components",
+              "items": [
+                "Developed shared PDF Viewer component",
+                "Built PageHeader component, replacing legacy Breadcrumb",
+                "Set up full i18n infrastructure",
+                "Overhauled credit detail/list UI with state-based rendering",
+                "Improved notice, news, Contact Us, and customer service UI",
+                "Developed Chart Skeleton UI for carbon market price trends"
+              ]
+            },
+            {
+              "name": "Carbon Credit Features",
+              "items": [
+                "Built credit detail page from scratch (including VRC)",
+                "Implemented credit list Excel export",
+                "Developed additional certification filter/search features",
+                "Implemented credit document PDF download and status-based UI controls",
+                "Resolved numerous issuance/transfer/reduction application bugs",
+                "Improved overall quality across VRC, ZCC, and Registry credits"
+              ]
+            },
+            {
+              "name": "Marketplace Features",
+              "items": [
+                "Fixed payment process errors and redesigned purchase detail UI",
+                "Resolved purchase/sale list filtering, Breadcrumb, and data refresh issues",
+                "Migrated and stabilized User, Payment, News, and Marketplace APIs"
+              ]
+            },
+            {
+              "name": "Registry, Projects & Methodology",
+              "items": [
+                "Developed methodology, project, and credit detail pages",
+                "Implemented document viewing, linking, and version detail features",
+                "Built full project/methodology list and detail views"
+              ]
+            },
+            {
+              "name": "QA, Stabilization & Map Enhancement",
+              "items": [
+                "Addressed all QA items across two cycles and resolved critical issues",
+                "Separated Google Map component and redesigned address input",
+                "Localized Market/Credit features to English and restructured i18n files"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Web3-based Service Frontend Development",
+          "skills": "React, Next.js, Metamask, Web3.js, Amplitude",
+          "description": "Frontend development for a Web3 wallet-based asset management service",
+          "categories": [
+            {
+              "name": "Web3 Integration & Wallet",
+              "items": [
+                "Built Metamask connection feature and wallet address validation logic",
+                "Implemented polling-based messaging for transaction status notifications",
+                "Integrated wallet connection APIs (login/signing/wallet info)"
+              ]
+            },
+            {
+              "name": "User Page UI/Features",
+              "items": [
+                "Redesigned main page with multilingual image swapping (KO/EN/JA)",
+                "Developed My Assets, Connection, Transaction History, and Tax pages",
+                "Built side menu and restructured overall page architecture"
+              ]
+            },
+            {
+              "name": "Admin & Analytics",
+              "items": [
+                "Developed Admin User detail page and user management menu",
+                "Implemented project showcase feature with display controls",
+                "Applied Amplitude event tracking with custom event mapping"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Energy IoT App - Device API Integration",
+          "skills": "React, React Native, Redux, Redux-Saga, Expo",
+          "works": [
+            "Integrated APIs to display user-owned device lists",
+            "Connected user EV app with ENode platform"
+          ]
+        },
+        {
+          "title": "STO Trading Platform Frontend Development",
+          "skills": "React, Next.js, NextAuth, Redux, Redux-Toolkit, Chakra UI, Storybook",
+          "works": [
+            "Implemented general and corporate member login with NextAuth",
+            "Integrated CRUD APIs for projects, news, and more",
+            "Applied slider and text animation effects with responsive UI"
+          ]
+        },
+        {
+          "title": "Official Website Frontend Development",
+          "skills": "React, Next.js, Chakra UI, TailwindCSS",
+          "works": [
+            "Developed responsive website with News and Chart API integration",
+            "Built carousel and chart components"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "H-Energy",
+      "year": "2020 ~ 2022",
+      "role": "Frontend Developer",
+      "projects": [
+        {
+          "title": "Rooftop Investment Platform Development",
+          "skills": "Vue, Quasar, Pug, Stylus, JavaScript, Chart.js, Kakao Map",
+          "works": [
+            "Integrated backend REST APIs and built entire service UI with Pug and Stylus",
+            "Created statistical graphs for investment quantities, power output, and generation with Chart.js",
+            "Utilized Kakao Map API for rooftop location display with SVG map visualization",
+            "Developed social sharing features for KakaoTalk, Facebook, and more"
+          ]
+        },
+        {
+          "title": "Official Website Frontend Development",
+          "skills": "Vue3, Firebase",
+          "works": [
+            "Developed responsive UI and deployed static assets via Firebase"
+          ]
+        },
+        {
+          "title": "Promotional Landing Page Development",
+          "skills": "Vue, Firebase",
+          "works": [
+            "Developed responsive UI and deployed static assets via Firebase"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Geeks Family",
+      "year": "2019 ~ 2020",
+      "role": "Frontend Developer",
+      "projects": [
+        {
+          "title": "Partner Site (Admin) UI Development",
+          "skills": "JavaScript, jQuery, HTML/CSS, SCSS, PHP/Laravel",
+          "works": [
+            "Developed entire service UI with HTML and CSS",
+            "Created chart UIs for order and delivery statistics using Chart.js"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Others",
+      "year": "",
+      "role": "",
+      "projects": [
+        {
+          "title": "Popple Tour Package Reservation UI Development",
+          "skills": "React, Redux-Toolkit, Styled-Component",
+          "works": []
+        },
+        {
+          "title": "Hyundai Motor Admin UI Modifications & Maintenance",
+          "skills": "Vue3, SCSS",
+          "works": []
+        }
+      ]
+    }
+  ],
+  "spec": {
+    "education": {
+      "name": "Bachelor of Industrial Design, Kookmin University",
+      "year": "2016 ~ 2019"
+    },
+    "certificate": {
+      "name": "Information Processing Engineer",
+      "year": "2019"
+    }
+  }
+}

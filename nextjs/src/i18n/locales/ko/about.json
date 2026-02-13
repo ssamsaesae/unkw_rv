@@ -1,0 +1,297 @@
+{
+  "title": "Career",
+  "description": "5년 이상의 Frontend 개발 경력을 보유한 개발자로, LCA·탄소 크레딧 플랫폼·Web3 서비스·IoT·STO 등 다양한 도메인에서 서비스 전반의 프론트엔드를 설계하고 구현했습니다.",
+  "highlights": [
+    "복잡한 도메인 비즈니스 로직 UI/UX 구현",
+    "대규모 입력·검증 시스템 구축",
+    "시각화·그래픽 기반 UI 개발",
+    "대규모 서비스 API 전환 FE 전담",
+    "Carbon Credit 도메인 전반 개발",
+    "공통 컴포넌트 설계 & UI/UX 개선",
+    "Web3 지갑 연동 개발",
+    "FE 환경 구축 & 개발 생산성 개선"
+  ],
+  "experience": [
+    {
+      "company": "Greenery",
+      "year": "2022 ~ Present",
+      "role": "Frontend Developer",
+      "projects": [
+        {
+          "title": "LCA/LCCI 플랫폼 프론트엔드 개발",
+          "skills": "React, Redux, Redux-Toolkit, React-Flow, MUI, Data Grid Pro, TailwindCSS, Storybook, Webpack/Vite",
+          "description": "전과정평가(LCA) 생성·분석·관리 통합 플랫폼 Frontend 전반 설계 및 구현",
+          "categories": [
+            {
+              "name": "LCA/LCCI 도메인 기반 대규모 서비스 구축",
+              "items": [
+                "LCA 생성, 공정별 데이터 입력, Mass Balance, 공정흐름도, LCI DB 연결 등 전 과정 UI 및 기능 전면 개발",
+                "복잡한 LCA 도메인(할당 로직, Cut-off, LCI DB, 공정 트리, 공정흐름도)을 이해하고 실제 사용자 플로우로 매핑하여 UI·UX 반영",
+                "전과정 해석(LCI → LCIA) 기능 전체 개발 및 개선",
+                "LCA 상세/요약/리포트 다운로드(PDF/Excel) 등 결과 산출·시각화 기능 구현"
+              ]
+            },
+            {
+              "name": "대규모 입력·검증 UI 개발 및 공통 컴포넌트화",
+              "items": [
+                "Data Grid Pro 기반 대용량 데이터 입력 화면 개발 및 그리드 컴포넌트 공통화",
+                "원재료/보조물질, 에너지/물/유틸리티, BOM, Mass Balance 등 복잡한 상호작용 UI 개발",
+                "Excel 업로드/다운로드, Key-in 입력, 필수 검증, Null 처리, 중복 검증 등 다양한 Validation 처리",
+                "월별 업데이트·항목별 트리 구조까지 포함한 고난이도 입력 UX 해결",
+                "LCI DB 검색/조회/필터링/연동 화면 개발"
+              ]
+            },
+            {
+              "name": "공정 흐름도(Process Flow Diagram) 기능 전체 개발",
+              "items": [
+                "Canvas 기반 Flow Editor 구성 요소 개발",
+                "노드 생성·삭제·선택·자동배치·드래그·스타일 변경 등 그래픽 에디터 수준의 기능 구현",
+                "공정흐름도 저장/불러오기, 이미지 다운로드 기능 개발",
+                "구성 항목 패널(유틸리티/원재료/노드) 및 Tree View와 상호 연동"
+              ]
+            },
+            {
+              "name": "기준정보/조직관리 전 영역 UI 개발",
+              "items": [
+                "데이터관리(업체, 이론 BOM), 할당관리(대기배출/폐수/폐기물/LNG/기준인자) 화면 개발",
+                "사업장·회사·공정 관리 화면 개발",
+                "기준정보 엑셀 업로드/편집/조회 흐름 전체 개발",
+                "필터링, 트리 구조, 연월 선택 컴포넌트 개발"
+              ]
+            },
+            {
+              "name": "FE 환경 구축 및 개발 생산성 개선",
+              "items": [
+                "FE 프로젝트 초기 세팅(Webpack/Vite 환경 설정)",
+                "ESLint/Prettier 설정 및 기존 코드 오류 제거",
+                "Storybook 기반 디자인 시스템 구축(Input, Dropdown, Sidebar 등 공통 컴포넌트)",
+                "유료/오픈소스 라이브러리 검토(Charts, Grid, Report 등)",
+                "GNB/LNB/RNB 라우팅 구조 개선 및 전면 리팩토링"
+              ]
+            },
+            {
+              "name": "ECO View / 감축 시뮬레이션 FE 개발",
+              "items": [
+                "재생에너지 감축 시뮬레이션 입력/결과 UI 개발",
+                "차트 컴포넌트 개발 및 PDF 다운로드 기능",
+                "LCI DB 연동 모달 조건부 렌더링 개선",
+                "ECO View 전체 UI 개발 및 기능 개선"
+              ]
+            },
+            {
+              "name": "QA 대응 및 실서비스 품질 향상",
+              "items": [
+                "수백 건의 QA/기획 QA/디자인 QA 버그 처리 (입력·저장 오류, Tree View 동기화, Null 처리, 라우팅 오류 등)",
+                "데이터 저장 실패 후 스텝 이동, I/O 목록 누락, 공정 트리 Depth 오류, Cut-off 오류 등 치명적 로직 버그 해결",
+                "LCA 생성 중 화면 이탈 시 알림 처리 등 사용자 안전 로직 추가",
+                "렌더링 최적화, 무한 렌더링 수정 등 성능 개선"
+              ]
+            },
+            {
+              "name": "대규모 LCA 관리 기능 고도화",
+              "items": [
+                "LCA 생성 흐름 전체 고도화 (일반정보 → 공정별 데이터 → 공정흐름도 → 최종 I/O → Cut-off → 결과요약 → 데이터 검증)",
+                "이어하기 기능, 상세 조회, 결과 요약, 요약 다운로드 기능 개발",
+                "LCA 삭제/수정, 중복 생성 방지, 라우팅 오류 해결"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "POPLE Carbon Credit·Marketplace·Registry 플랫폼",
+          "skills": "React, Next.js, Nest.js, MUI, Chakra UI, Context API, Google Maps, i18next",
+          "description": "탄소 크레딧 발행·거래·레지스트리 통합 플랫폼 Frontend 전반 개발 및 운영",
+          "categories": [
+            {
+              "name": "플랫폼 리팩토링 & FE 구조 개선",
+              "items": [
+                "회원가입 로직 구조 개선 및 기업 회원가입 파일 업로드 오류 해결",
+                "약관 페이지/API 다국어 처리 및 변경 대응",
+                "휴대폰 번호 유효성 검사, 인증메일 승인/재발송 오류 전면 해결",
+                "사업 등록/수정/삭제 및 크레딧 발행·감축량 인증 플로우 리팩토링",
+                "무한 루프, 잘못된 API 호출, 중복 호출 등 근본 문제 해결",
+                "Marketplace·Credit·Registry·User·Payment 등 전체 API 전환 FE 전담",
+                "API 스펙 변경에 따른 Admin/Front 전면 개편"
+              ]
+            },
+            {
+              "name": "UI/UX 개선 & 공통 컴포넌트 개발",
+              "items": [
+                "PDF Viewer 공통 컴포넌트 개발",
+                "PageHeader 컴포넌트 개발 (기존 Breadcrumb 제거·통합)",
+                "다국어(i18n) 세팅 전면 구축",
+                "크레딧 상세/목록 UI 정비 (상태 기반 UI, 레이아웃, 스타일 전면 수정)",
+                "공지사항/뉴스/Contact Us/고객센터 전반 UI 개선",
+                "Chart Skeleton UI 개발 (탄소시장 가격 동향)"
+              ]
+            },
+            {
+              "name": "Carbon Credit 기능 개발",
+              "items": [
+                "크레딧 상세 페이지 신규 개발 (VRC 포함)",
+                "크레딧 목록 Excel Export 구현",
+                "추가 인증 항목 필터/조회 기능 개발",
+                "크레딧 관련 문서(PDF) 다운로드 및 상태별 UI 제어",
+                "발행/이전/감축량 신청 관련 다수 오류 해결",
+                "VRC·ZCC·Registry 크레딧 전체 기능 품질 개선"
+              ]
+            },
+            {
+              "name": "Marketplace 기능 개발",
+              "items": [
+                "결제 프로세스 오류 해결 및 구매상세 UI 전면 개선",
+                "구매/판매 목록 필터링·Breadcrumb·데이터 갱신 문제 해결",
+                "User·Payment·News·Marketplace API 전면 전환 및 안정화"
+              ]
+            },
+            {
+              "name": "Registry·프로젝트·방법론 개발",
+              "items": [
+                "방법론·프로젝트·크레딧 상세 페이지 개발",
+                "주요 문서 조회/링크/버전 상세보기 기능 구현",
+                "프로젝트/방법론 목록 및 상세 화면 전면 구현"
+              ]
+            },
+            {
+              "name": "QA·안정화·지도 기능 고도화",
+              "items": [
+                "1차·2차 QA 항목 전량 반영 및 크리티컬 이슈 해결",
+                "Google Map 컴포넌트 분리 및 주소 입력 컴포넌트 재설계",
+                "Market/Credit 전반 영문화 처리 및 i18n 구조화 리팩토링"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Web3 기반 서비스 FE 개발",
+          "skills": "React, Next.js, Metamask, Web3.js, Amplitude",
+          "description": "Web3 지갑 연동 기반 자산 관리 서비스 Frontend 개발",
+          "categories": [
+            {
+              "name": "Web3 연동 & 지갑 기능",
+              "items": [
+                "Metamask 연결 기능 신규 개발 및 지갑 주소 유효성 검증 로직 구현",
+                "폴링 기반 메시징 구조 구현 (트랜잭션 상태 변경 알림 처리)",
+                "연결 관련 API 연동 (로그인/서명/지갑 정보 조회)"
+              ]
+            },
+            {
+              "name": "사용자 페이지 UI/기능 개발",
+              "items": [
+                "메인 페이지(한/영/일) 이미지 교체 및 페이지 개편",
+                "내 자산·연결·거래내역·세금 페이지 UI 개발",
+                "사이드 메뉴 UI 및 전체 페이지 구조 재정비"
+              ]
+            },
+            {
+              "name": "Admin 기능 & 분석",
+              "items": [
+                "Admin User 상세 페이지 및 유저 관리 메뉴 개발",
+                "프로젝트 띄우기 기능 구현 (프로젝트 정보 연결/전시 제어)",
+                "Amplitude 이벤트 트래킹 적용 및 Event Mapping 설계"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "에너지 IoT APP 가전 및 기기 API 연동",
+          "skills": "React, React Native, Redux, Redux-Saga, Expo",
+          "works": [
+            "유저 소유 전자기기 API 연동 후 기기목록 페이지 표시",
+            "ENode로 유저의 EV APP 연동"
+          ]
+        },
+        {
+          "title": "STO 거래 플랫폼 프론트엔드 개발",
+          "skills": "React, Next.js, NextAuth, Redux, Redux-Toolkit, Chakra UI, Storybook",
+          "works": [
+            "NextAuth로 일반·기업회원 로그인 개발",
+            "Project, News 등 CRUD API 연동",
+            "Slider, Text Animation 이펙트 적용 및 반응형 UI 개발"
+          ]
+        },
+        {
+          "title": "Official Website 프론트엔드 개발",
+          "skills": "React, Next.js, Chakra UI, TailwindCSS",
+          "works": [
+            "반응형 웹사이트 개발 및 News, Chart API 연동",
+            "Carousel, Chart Component 개발"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "H-Energy",
+      "year": "2020 ~ 2022",
+      "role": "Frontend Developer",
+      "projects": [
+        {
+          "title": "공유옥상 투자 플랫폼 개발",
+          "skills": "Vue, Quasar, Pug, Stylus, JavaScript, Chart.js, Kakao Map",
+          "works": [
+            "Backend REST API 연동 및 Pug, Stylus로 전체 서비스 UI 개발",
+            "Chart.js를 사용하여 출자수량, 전력량, 발전량 등의 통계 그래프 개발",
+            "Kakao Map API를 사용한 옥상위치 표시 및 SVG 그래픽 지도 표시",
+            "Kakao, Facebook 등 소셜 공유 기능 개발"
+          ]
+        },
+        {
+          "title": "Official Website 프론트엔드 개발",
+          "skills": "Vue3, Firebase",
+          "works": [
+            "반응형 UI 개발 및 Firebase로 정적 배포"
+          ]
+        },
+        {
+          "title": "프로모션용 랜딩페이지 개발",
+          "skills": "Vue, Firebase",
+          "works": [
+            "반응형 UI 개발 및 Firebase로 정적 배포"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Geeks Family",
+      "year": "2019 ~ 2020",
+      "role": "Frontend Developer",
+      "projects": [
+        {
+          "title": "파트너스 사이트(어드민) UI 개발",
+          "skills": "JavaScript, jQuery, HTML/CSS, SCSS, PHP/Laravel",
+          "works": [
+            "HTML, CSS로 전체 서비스 UI 개발",
+            "Chart.js로 주문, 배달량 등 통계페이지 Chart UI 개발"
+          ]
+        }
+      ]
+    },
+    {
+      "company": "Others",
+      "year": "",
+      "role": "",
+      "projects": [
+        {
+          "title": "팝플투어 패키지 예약 UI 개발",
+          "skills": "React, Redux-Toolkit, Styled-Component",
+          "works": []
+        },
+        {
+          "title": "현대 자동차 어드민 UI 수정 및 유지보수",
+          "skills": "Vue3, SCSS",
+          "works": []
+        }
+      ]
+    }
+  ],
+  "spec": {
+    "education": {
+      "name": "국민대학교 공업디자인 학사",
+      "year": "2016 ~ 2019"
+    },
+    "certificate": {
+      "name": "정보처리기사",
+      "year": "2019"
+    }
+  }
+}
