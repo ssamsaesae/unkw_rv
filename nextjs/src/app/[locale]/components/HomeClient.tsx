@@ -11,8 +11,11 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import SocialShare from "@/components/social/SocialShare";
 import { skillsList } from "@/constants/info";
+
+const HeroScene = dynamic(() => import("./HeroScene"), { ssr: false });
 
 /* ─── Animated Counter Hook ─── */
 function useCounter(end: number, duration = 2000) {
@@ -121,22 +124,24 @@ export default function HomeClient({
 }) {
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
+  const mouseRef = useRef({ x: 0, y: 0 });
 
   const springX = useSpring(mouseX, { stiffness: 40, damping: 25 });
   const springY = useSpring(mouseY, { stiffness: 40, damping: 25 });
 
   /* Parallax layers for hero text */
-  const layer1X = useTransform(springX, [0, 1], [-20, 20]);
-  const layer1Y = useTransform(springY, [0, 1], [-12, 12]);
-  const layer2X = useTransform(springX, [0, 1], [14, -14]);
-  const layer2Y = useTransform(springY, [0, 1], [8, -8]);
+  const layer1X = useTransform(springX, [0, 1], [-12, 12]);
+  const layer1Y = useTransform(springY, [0, 1], [-8, 8]);
   const gridShiftX = useTransform(springX, [0, 1], [3, -3]);
   const gridShiftY = useTransform(springY, [0, 1], [2, -2]);
 
   const handleMouseMove = useCallback(
     (e: React.MouseEvent) => {
-      mouseX.set(e.clientX / window.innerWidth);
-      mouseY.set(e.clientY / window.innerHeight);
+      const nx = e.clientX / window.innerWidth;
+      const ny = e.clientY / window.innerHeight;
+      mouseX.set(nx);
+      mouseY.set(ny);
+      mouseRef.current = { x: (nx - 0.5) * 2, y: (ny - 0.5) * 2 };
     },
     [mouseX, mouseY]
   );
@@ -156,10 +161,6 @@ export default function HomeClient({
   /* Scroll progress */
   const { scrollYProgress } = useScroll();
   const progressW = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-
-  /* Marquee */
-  const marquee =
-    "REACT \u00B7 NEXT.JS \u00B7 TYPESCRIPT \u00B7 REACT NATIVE \u00B7 NODE.JS \u00B7 VUE \u00B7 REDUX \u00B7 FRAMER MOTION \u00B7 TAILWINDCSS \u00B7 CHAKRA UI \u00B7 MUI \u00B7 STORYBOOK \u00B7 ";
 
   /* Experience list */
   const expList = [
@@ -183,22 +184,20 @@ export default function HomeClient({
           className="absolute inset-0 pointer-events-none"
           style={{ x: gridShiftX, y: gridShiftY }}
         >
-          {/* Vertical */}
-          {[16.66, 33.33, 50, 66.66, 83.33].map((p) => (
+          {[20, 40, 60, 80].map((p) => (
             <motion.div
               key={`v-${p}`}
-              className="absolute top-0 bottom-0 w-px bg-white/[0.07]"
+              className="absolute top-0 bottom-0 w-px bg-white/[0.05]"
               style={{ left: `${p}%` }}
               initial={{ scaleY: 0 }}
               animate={{ scaleY: ready ? 1 : 0 }}
               transition={{ duration: 1.2, delay: 0.1 + (p / 100) * 0.3, ease: "circOut" }}
             />
           ))}
-          {/* Horizontal */}
-          {[25, 50, 75].map((p, i) => (
+          {[33, 66].map((p, i) => (
             <motion.div
               key={`h-${p}`}
-              className="absolute left-0 right-0 h-px bg-white/[0.07]"
+              className="absolute left-0 right-0 h-px bg-white/[0.05]"
               style={{ top: `${p}%` }}
               initial={{ scaleX: 0 }}
               animate={{ scaleX: ready ? 1 : 0 }}
@@ -207,152 +206,98 @@ export default function HomeClient({
           ))}
         </motion.div>
 
-        {/* Grid Coordinates */}
+        {/* 3D Wireframe Sphere */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.6, duration: 1 }}
-          className="absolute inset-0 pointer-events-none"
+          transition={{ delay: 0.8, duration: 1.5 }}
+          className="absolute inset-0 z-0"
         >
-          {[
-            { x: "16.66%", y: "25%" },
-            { x: "33.33%", y: "25%" },
-            { x: "50%", y: "25%" },
-            { x: "66.66%", y: "25%" },
-            { x: "83.33%", y: "25%" },
-          ].map((pos, i) => (
-            <span
-              key={i}
-              className="absolute text-[10px] text-white/15 font-mono -translate-x-1/2"
-              style={{ left: pos.x, top: pos.y, marginTop: "-18px" }}
-            >
-              {String(i + 1).padStart(2, "0")}
-            </span>
-          ))}
-          {/* Accent dots at grid intersections */}
+          <div className="absolute top-[10%] right-[-5%] md:top-[8%] md:right-[5%] w-[70vw] h-[70vw] md:w-[45vw] md:h-[45vw] max-w-[600px] max-h-[600px]">
+            <HeroScene mouseRef={mouseRef} />
+          </div>
+        </motion.div>
+
+        {/* Text Content */}
+        <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-[8%]">
+          {/* Label */}
           <motion.div
-            className="absolute w-2.5 h-2.5 rounded-full bg-primary"
-            style={{ top: "50%", left: "66.66%", x: "-50%", y: "-50%" }}
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ delay: 2, type: "spring", stiffness: 300 }}
-          />
-          <div
-            className="absolute w-1.5 h-1.5 rounded-full bg-white/15"
-            style={{ top: "75%", left: "33.33%", transform: "translate(-50%,-50%)" }}
-          />
-          <div
-            className="absolute w-1 h-1 rounded-full bg-white/10"
-            style={{ top: "50%", left: "16.66%", transform: "translate(-50%,-50%)" }}
-          />
-        </motion.div>
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="flex items-center gap-3 mb-6"
+          >
+            <div className="w-8 h-px bg-primary" />
+            <span className="text-white/30 text-[10px] font-mono tracking-[0.25em] uppercase">
+              Frontend Developer & UI/UX Designer
+            </span>
+          </motion.div>
 
-        {/* ── UNKNOWN ── */}
-        <motion.div
-          className="absolute left-6 md:left-[12%]"
-          style={{ top: "22%", x: layer1X, y: layer1Y }}
-        >
-          <div className="overflow-hidden">
-            <RevealText
-              text="UNKNOWN"
-              className="font-clash font-bold text-[clamp(3.2rem,13vw,11rem)] text-white leading-[0.9] tracking-[-0.03em]"
-              delay={0.4}
-            />
-          </div>
-        </motion.div>
+          {/* Name */}
+          <motion.div style={{ x: layer1X, y: layer1Y }}>
+            <div className="overflow-hidden">
+              <RevealText
+                text="UNKNOWN"
+                className="font-clash font-bold text-[clamp(2.4rem,8vw,6.5rem)] text-white leading-[0.95] tracking-[-0.02em]"
+                delay={0.4}
+              />
+            </div>
+            <div className="overflow-hidden flex items-end gap-2 md:gap-3 mt-1">
+              <RevealText
+                text="RIVER"
+                className="font-clash font-bold text-[clamp(2.4rem,8vw,6.5rem)] text-white leading-[0.95] tracking-[-0.02em]"
+                delay={0.7}
+              />
+              <motion.div
+                initial={{ scale: 0, rotate: -180 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ delay: 1.3, type: "spring", stiffness: 200, damping: 12 }}
+                className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-primary mb-1.5 md:mb-3"
+              />
+            </div>
+          </motion.div>
 
-        {/* ── RIVER ── */}
-        <motion.div
-          className="absolute left-6 md:left-[12%]"
-          style={{ top: "40%", x: layer2X, y: layer2Y }}
-        >
-          <div className="overflow-hidden flex items-end gap-2 md:gap-4">
-            <RevealText
-              text="RIVER"
-              className="font-clash font-bold text-[clamp(3.2rem,13vw,11rem)] text-white leading-[0.9] tracking-[-0.03em]"
-              delay={0.7}
-            />
-            <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ delay: 1.3, type: "spring", stiffness: 200, damping: 12 }}
-              className="w-4 h-4 md:w-6 md:h-6 rounded-full bg-primary mb-2 md:mb-4"
-            />
-          </div>
-        </motion.div>
-
-        {/* Right Annotations */}
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.5, duration: 0.8, ease: "circOut" }}
-          className="absolute top-[24%] right-6 md:right-[8%] text-right"
-        >
-          <p className="text-white/30 text-[10px] font-mono tracking-[0.25em] uppercase">
-            Since
-          </p>
-          <p className="text-white font-clash font-semibold text-xl mt-0.5">
-            2019 —
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 1.7, duration: 0.8, ease: "circOut" }}
-          className="absolute top-[50%] right-6 md:right-[8%] text-right"
-        >
-          <p className="text-white/30 text-[10px] font-mono tracking-[0.25em] uppercase">
-            Based in
-          </p>
-          <p className="text-white font-clash font-semibold text-xl mt-0.5">
-            Seoul, KR
-          </p>
-        </motion.div>
+          {/* Subtitle info */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.5, duration: 0.7 }}
+            className="mt-8 flex items-center gap-6"
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-white/20 text-[10px] font-mono tracking-[0.2em]">SINCE</span>
+              <span className="text-white/50 font-clash font-semibold text-sm">2019</span>
+            </div>
+            <span className="text-white/10">|</span>
+            <div className="flex items-center gap-2">
+              <span className="text-white/20 text-[10px] font-mono tracking-[0.2em]">BASED IN</span>
+              <span className="text-white/50 font-clash font-semibold text-sm">Seoul, KR</span>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2, duration: 0.8 }}
-          className="absolute bottom-0 left-0 right-0 border-t border-white/10"
+          className="absolute bottom-0 left-0 right-0 border-t border-white/[0.06]"
         >
-          <div className="flex justify-between items-center px-6 py-5">
-            <div className="flex items-center gap-4 md:gap-6">
-              <span className="text-white/30 text-[10px] md:text-xs font-mono tracking-[0.15em]">
-                FRONTEND DEVELOPER
-              </span>
-              <span className="text-white/15 hidden md:inline">/</span>
-              <span className="text-white/30 text-[10px] md:text-xs font-mono tracking-[0.15em] hidden md:inline">
-                UI/UX DESIGNER
+          <div className="flex justify-between items-center px-6 py-4">
+            <div className="flex items-center gap-4">
+              <span className="text-white/25 text-[10px] font-mono tracking-[0.15em]">
+                PORTFOLIO 2025
               </span>
             </div>
             <motion.span
-              animate={{ y: [0, 6, 0] }}
+              animate={{ y: [0, 5, 0] }}
               transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-              className="text-white/30 text-[10px] font-mono tracking-[0.15em]"
+              className="text-white/25 text-[10px] font-mono tracking-[0.15em]"
             >
               SCROLL ↓
             </motion.span>
           </div>
         </motion.div>
-
-        {/* Top gradient for header icon visibility */}
-        <div className="absolute top-0 left-0 right-0 h-28 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none z-[5]" />
-      </section>
-
-      {/* ═══════ MARQUEE ═══════ */}
-      <section className="bg-primary py-3.5 overflow-hidden border-y border-black/10">
-        <div className="marquee-wrap flex">
-          <div className="marquee-track flex whitespace-nowrap">
-            <span className="font-clash font-bold text-base md:text-lg text-black tracking-wider">
-              {marquee}
-            </span>
-            <span className="font-clash font-bold text-base md:text-lg text-black tracking-wider">
-              {marquee}
-            </span>
-          </div>
-        </div>
       </section>
 
       {/* ═══════ ABOUT ═══════ */}
