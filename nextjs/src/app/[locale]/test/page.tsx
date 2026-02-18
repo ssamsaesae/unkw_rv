@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 // ScrollTrigger + Parallax + Video Sequence Case Study Page
 export default function CaseStudyScrollPage() {
-  const containerRef = useRef(null);
-  const sectionsRef = useRef([]);
-  const videoRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const sectionsRef = useRef<(HTMLElement | null)[]>([]);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const { scrollY } = useViewportScroll();
 
   // Parallax motion: Hero image & background layers
@@ -18,7 +18,8 @@ export default function CaseStudyScrollPage() {
   const y2 = useTransform(scrollY, [0, 800], [0, 300]);
 
   useEffect(() => {
-    sectionsRef.current.forEach((section, i) => {
+    sectionsRef.current.forEach((section) => {
+      if (!section) return;
       gsap.fromTo(
         section.querySelector(".text-block"),
         { y: 80, opacity: 0 },
@@ -61,14 +62,14 @@ export default function CaseStudyScrollPage() {
     if (video) {
       let frameCount = 90; // total number of frames in sequence
       let currentFrame = 0;
-      let requestId;
+      let requestId: number;
 
       const updateVideo = () => {
         currentFrame = Math.floor(
           (scrollY.get() / (document.body.scrollHeight - window.innerHeight)) *
             frameCount
         );
-        video.currentTime = (currentFrame / frameCount) * video.duration;
+        (video as HTMLVideoElement).currentTime = (currentFrame / frameCount) * (video as HTMLVideoElement).duration;
         requestId = requestAnimationFrame(updateVideo);
       };
 
@@ -159,7 +160,7 @@ export default function CaseStudyScrollPage() {
       {sections.map((sec, i) => (
         <section
           key={i}
-          ref={(el) => (sectionsRef?.current[i] = el)}
+          ref={(el) => { if (sectionsRef.current) sectionsRef.current[i] = el; }}
           className="min-h-screen grid md:grid-cols-2 items-center gap-10 px-6 py-20 md:py-32 max-w-6xl mx-auto"
         >
           <div className="text-block order-2 md:order-1">
